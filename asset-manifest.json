@@ -1,16 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.35eb7b6d.css",
-    "main.js": "/static/js/main.09adaf69.js",
+    "main.css": "/static/css/main.cdaa79a2.css",
+    "main.js": "/static/js/main.a31a533b.js",
     "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
+    "static/media/phoneframe.png": "/static/media/phoneframe.3613c8dff66b9bc80263.png",
     "static/media/BricolageGrotesque-VariableFont_opsz,wdth,wght.ttf": "/static/media/BricolageGrotesque-VariableFont_opsz,wdth,wght.a9842791f821464a2354.ttf",
     "index.html": "/index.html",
-    "main.35eb7b6d.css.map": "/static/css/main.35eb7b6d.css.map",
-    "main.09adaf69.js.map": "/static/js/main.09adaf69.js.map",
+    "main.cdaa79a2.css.map": "/static/css/main.cdaa79a2.css.map",
+    "main.a31a533b.js.map": "/static/js/main.a31a533b.js.map",
     "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.35eb7b6d.css",
-    "static/js/main.09adaf69.js"
+    "static/css/main.cdaa79a2.css",
+    "static/js/main.a31a533b.js"
   ]
 }
