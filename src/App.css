@@ -63,11 +63,10 @@ ul.custom-list li {
 
 /*for list hover effect */
 .year-popup {
-  /* position: absolute; */
   position: absolute;
   top: 0;
-  left: -80px; /* Adjust the left value to control the distance from the project title */
-  padding-left: 7%;
+  left: -70px; /* Adjust the left value to control the distance from the project title */
+  padding-left: 5%;
   color: #69635E;
   display: none; /* Initially hide the year popup */
 }
@@ -91,7 +90,7 @@ ul.custom-list li {
 
 /* Move the project name to the right when hovering */
 .work-item.hovered .work-info {
-  padding-left: 8%; /* Adjust this value to move the name to the right */
+  padding-left: 10%; /* Adjust this value to move the name to the right */
   font-weight: bold;
   cursor: pointer;
 }
@@ -100,11 +99,23 @@ ul.custom-list li {
 .video-container {
   align-items: center; /* Vertically center the content */
   justify-content: flex-end; /* Align content to the right */
-  width: 30%;
-  height: 100vh; /* Make the container fill the entire viewport height */
-  padding: 0 20px; /* Add padding for spacing */
+  height: 100vh;
   position: relative; /* Relative positioning to allow absolute positioning of the video player */
   flex: 2;
+  padding-top: 10%;
+  padding-left: 10%;
+  overflow: hidden;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 390;
+  height: 100%;
+  background-image: url('phoneframe.png');
+  background-size: cover;
+  z-index: -1;
 }
 
 /* Define the Bricolage Grotesque font */

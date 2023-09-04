@@ -23,7 +23,7 @@ const works= [
   
   {
     "name":"Nothing X",
-    "url":process.env.PUBLIC_URL + "Videos/test1.mp4",
+    "url":process.env.PUBLIC_URL + "Videos/zenmode.mp4",
     "year":"2022",
     "isYoutube":false,
     "company":"Nothing"
@@ -76,7 +76,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>WaiHong</h1> 
+        <h1>waihong</h1> 
       </header>
 
         <WorkList works={works} selectedVideo={selectedVideo} onSelectVideo={setSelectedVideo} />
