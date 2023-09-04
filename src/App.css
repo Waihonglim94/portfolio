@@ -1,16 +1,11 @@
 .App {
   text-align: left;
+  background-color: #F7F6F4;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
 
 .App-header {
@@ -23,11 +18,57 @@
   justify-content: top;
   padding-top: 4%;
   font-size: calc(8px + 1vmin);
-  color: 69635E;
+  color: #69635E;
+  font-family: 'Bricolage Grotesque', sans-serif;
 }
 
 .App-link {
   color: #61dafb;
+}
+
+
+ul.custom-list {
+  list-style-type: none; /* Change the bullet style */
+  margin: 0; /* Remove default margin */
+  padding: 10%; /* Remove default padding */
+  font-family: 'Bricolage Grotesque', sans-serif;
+  background-color: #F7F6F4; /* Change the background color */
+}
+
+/* Target the <li> elements */
+ul.custom-list li {
+  margin-bottom: 10%; /* Add spacing between list items */
+  font-size: 16px; /* Change the font size */
+  color: #69635E; /* Change the text color */
+}
+
+/* Add this CSS to your stylesheet */
+.year-popup {
+  /* position: absolute; */
+  position: absolute;
+  top: 0;
+  left: -60px; /* Adjust the left value to control the distance from the project title */
+  padding: 5px;
+  color: #69635E;
+  display: none; /* Initially hide the year popup */
+}
+
+/* Show the year popup when hovering over the list item */
+.work-item.hovered .year-popup {
+  display: block;
+}
+
+.work-item {
+  position: relative; /* Ensure proper positioning of the year popup */
+  /* Add other styles for the work title here */
+}
+
+/* Define the Bricolage Grotesque font */
+@font-face {
+  font-family: 'Bricolage Grotesque';
+  src: url('fonts/BricolageGrotesque-VariableFont_opsz,wdth,wght.ttf') format('tff');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @keyframes App-logo-spin {
@@ -36,5 +77,11 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
   }
 }
