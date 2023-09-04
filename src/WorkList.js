@@ -145,8 +145,9 @@ function WorkList({ works, selectedWork, onSelectWork }) {
   return (
     <div>
         {/* <ul class="custom-list" className="work-list"> */}
-        <ul class="custom-list">
-        {works.map((work, index) => (
+        <h1>OnePlus 2019-2021</h1>
+        <ul className="custom-list" id="oneplus project">
+        {works.map((work, index) => ( (work.company ==="Oneplus" ) ?
           <li
             key={index}
             className={`work-item ${selectedWork === index ? 'selected' : ''} ${
@@ -160,7 +161,7 @@ function WorkList({ works, selectedWork, onSelectWork }) {
             {hoveredWork === index && (
               <div className="year-popup">{work.year}</div>
             )}
-          </li>
+          </li> : <></>
         ))}
       </ul>
 
@@ -169,7 +170,7 @@ function WorkList({ works, selectedWork, onSelectWork }) {
         ( <div> 
             {console.log(selectedVideo.name)}
             {selectedVideo.isYoutube ? (
-              <YouTube videoId={"https://youtu.be/YhdzE35Z6as?si=s2Ad2OhuR84dMw6q"} />
+              <YouTube videoId={"h6oGqvoWIks"} />
             ) : (
               <VideoJS options={videoJsOptions} onReady={handlePlayerReady} />
             )}

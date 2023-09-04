@@ -8,7 +8,8 @@ const works= [
     // "url":process.env.PUBLIC_URL + "Videos/test1.mp4",
     "url":"https://www.youtube.com/watch?v=h6oGqvoWIks&ab_channel=OnePlus",
     "year":"2020",
-    "isYoutube":true
+    "isYoutube":true,
+    "company":"Oneplus"
   },
   
   {
