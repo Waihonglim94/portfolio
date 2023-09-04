@@ -30,7 +30,7 @@ const VideoPlayer = React.memo(({ video }) => {
   return (
     video?
       (video.isYoutube ? 
-        <YouTube videoId={selectedWork.url} autoplay={true}/>
+        <YouTube videoId={video.url} autoplay={true}/>
        : 
         <VideoJS options={videoJsOptions} onReady={handlePlayerReady} />
       ):
