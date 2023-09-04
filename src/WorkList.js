@@ -32,7 +32,7 @@ const VideoPlayer = React.memo(({ video }) => {
       (video.isYoutube ? 
         <YouTube videoId={video.url} autoplay={true}/>
        : 
-        <VideoJS options={videoJsOptions} onReady={handlePlayerReady} />
+        <VideoJS options={videoJsOptions} onReady={handlePlayerReady}/>
       ):
       <></>
     
@@ -40,9 +40,7 @@ const VideoPlayer = React.memo(({ video }) => {
 });
 
 function WorkList({ works, selectedWork, onSelectWork }) {
-    // function onSelectWork(url){
-    //     console.log(url)
-    // }
+
     const [selectedVideo, setSelectedVideo] = useState(null); 
     const [hoveredWork, setHoveredWork] = useState(null);
 

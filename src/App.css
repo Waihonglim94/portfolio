@@ -91,7 +91,7 @@ ul.custom-list li {
 
 /* Move the project name to the right when hovering */
 .work-item.hovered .work-info {
-  padding-left: 80px; /* Adjust this value to move the name to the right */
+  padding-left: 8%; /* Adjust this value to move the name to the right */
   font-weight: bold;
   cursor: pointer;
 }
