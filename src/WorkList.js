@@ -81,28 +81,6 @@ function WorkList({ works, selectedWork, onSelectWork }) {
   return (
     <div className='container'>
       <div className='list-container'>
-        <header className="Title-header">OnePlus 2019-2021</header>
-          <ul className="custom-list" id="oneplus project">
-          {works.map((work, index) => ( (work.company ==="Oneplus" ) ?
-            <li
-              key={index}
-              className={`work-item ${selectedWork === index ? 'selected' : ''} ${
-                hoveredWork === index ? 'hovered' : ''
-              }`}
-              onClick={() => handleItemClick(work, index)}
-              onMouseEnter={() => handleMouseEnter(index)}
-              onMouseLeave={handleMouseLeave}
-            >
-              <div className="work-info">
-              {hoveredWork === index && (
-                <div className="year-popup">{work.year}</div>
-              )}
-                {work.name}
-              </div>
-            </li> : <></>
-          ))}
-        </ul>
-
         <header className="Title-header">Nothing 2021-now</header>
         {/* {console.log("page_updated")} */}
           <ul className="custom-list" id="nothing project">
@@ -125,6 +103,28 @@ function WorkList({ works, selectedWork, onSelectWork }) {
               </li> : <></>
             ))}
           </ul>
+
+          <header className="Title-header">OnePlus 2019-2021</header>
+          <ul className="custom-list" id="oneplus project">
+          {works.map((work, index) => ( (work.company ==="Oneplus" ) ?
+            <li
+              key={index}
+              className={`work-item ${selectedWork === index ? 'selected' : ''} ${
+                hoveredWork === index ? 'hovered' : ''
+              }`}
+              onClick={() => handleItemClick(work, index)}
+              onMouseEnter={() => handleMouseEnter(index)}
+              onMouseLeave={handleMouseLeave}
+            >
+              <div className="work-info">
+              {hoveredWork === index && (
+                <div className="year-popup">{work.year}</div>
+              )}
+                {work.name}
+              </div>
+            </li> : <></>
+          ))}
+        </ul>
       </div>
 
       <div className="video-container"> 

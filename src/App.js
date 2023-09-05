@@ -79,7 +79,17 @@ function App() {
         <h1>waihong</h1> 
       </header>
 
-        <WorkList works={works} selectedVideo={selectedVideo} onSelectVideo={setSelectedVideo} />
+      <WorkList works={works} selectedVideo={selectedVideo} onSelectVideo={setSelectedVideo} />
+      <header className="About-title">About</header>
+      <p className='About-paragraph'>
+        Hey! I'm a digital product designer from Malaysia. Currently working on
+        <a href="www.nothing.tech">Nothing</a>,previously at
+        <a href="www.oneplus.com">OnePlus</a>  
+        . On the side, I take
+        <a href="instagram.com/waaihong">photos</a>  
+        drink coffee, travel and
+        <a href="instagram.com/waaihong">mapericano.</a> 
+      </p>
     </div>
   );
 }
