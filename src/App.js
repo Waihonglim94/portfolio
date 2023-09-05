@@ -82,14 +82,18 @@ function App() {
       <WorkList works={works} selectedVideo={selectedVideo} onSelectVideo={setSelectedVideo} />
       <header className="About-title">About</header>
       <p className='About-paragraph'>
-        Hey! I'm a digital product designer from Malaysia. Currently working on
-        <a href="www.nothing.tech">Nothing</a>,previously at
-        <a href="www.oneplus.com">OnePlus</a>  
-        . On the side, I take
-        <a href="instagram.com/waaihong">photos</a>  
-        drink coffee, travel and
-        <a href="instagram.com/waaihong">mapericano.</a> 
+        Hey! I'm a digital product designer from Malaysia. 
+        Currently working on <a href="https://www.nothing.tech" className='About-link'>Nothing</a>, previously 
+        at <a href="https://www.oneplus.com" className='About-link'>OnePlus</a>. On the side, I take <a href="https://instagram.com/waaihong" className='About-link'>photos</a>  
+        , drink coffee, travel and <a href="instagram.com/waaihong" className='About-link'>mapericano.</a> 
       </p>
+      <div className='social-link-container'>
+        <a href="https://x.com/waaihong" className='Social-link'>X</a>
+        <a href="https://www.linkedin.com/in/waihonglim/" className='Social-link'>LinkedIn</a>
+        <a href="https://www.linkedin.com/in/waihonglim/" className='Social-link'>Resume</a>
+        <p> resume link not ready & need to write email popup</p>
+      </div>
+      
     </div>
   );
 }

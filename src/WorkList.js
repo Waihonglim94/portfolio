@@ -10,9 +10,7 @@ const VideoPlayer = React.memo(({ video }) => {
     autoplay: true,
     controls: false,
     responsive: true,
-    height: '315', // Set the height you desire
-    width: '560',  // Set the width you desire
-    fluid: false,
+    fluid: true,
     sources: video ? [ { src: video.url, type: 'video/mp4', }, ] : [],
   };
 
@@ -47,10 +45,7 @@ const VideoPlayer = React.memo(({ video }) => {
         <YouTube videoId={video.url} opts={opts} />
       ) : (
         <div className="video-container">
-          <div className='background-image'>
-            {/* <img src={"phoneframe.png"} alt="phoneframe" width={390} /> */}
-            {console.log("get image")}
-          </div>
+        {/* <div className='background-image'>{<img src={"phoneframe.png"} alt="phoneframe" width={390} />}{console.log("get image")}</div> */}
           <VideoJS options={videoJsOptions} onReady={handlePlayerReady} />
         </div>
       )
