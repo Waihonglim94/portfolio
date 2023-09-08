@@ -13,7 +13,7 @@
   display: flex;
   flex-direction: column;
   align-items: left;
-  padding-left: 8%;
+  margin-left: 10%;
   justify-content: top;
   padding-top: 4%;
   font-size: calc(8px + 1vmin);
@@ -29,7 +29,7 @@
 
 .list-container {
   flex-direction: column; /* Display the list items below each other */
-  padding-left: 8%;
+  margin-left: 10%;
   flex: 1;
   height: auto;
   padding-bottom: 2%;
@@ -68,8 +68,9 @@ ul.custom-list li {
 .year-popup {
   position: absolute;
   top: 0;
-  left: -50px; /* Adjust the left value to control the distance from the project title */
-  padding-left: 5%;
+  left: -0.1em; /*Adjust the left value using em units */
+  margin-left: -3em; /* Adjust the margin using em units */
+  padding-left: 0.5em; /* Adjust the padding using em units */
   color: #69635E;
   display: none; /* Initially hide the year popup */
 }
@@ -93,7 +94,7 @@ ul.custom-list li {
 
 /* Move the project name to the right when hovering */
 .work-item.hovered .work-info {
-  padding-left: 10%; /* Adjust this value to move the name to the right */
+  padding-left: 1em; /* Adjust this value to move the name to the right */
   font-weight: bold;
   cursor: pointer;
 }
@@ -128,7 +129,7 @@ ul.custom-list li {
   flex-direction: column;
   align-items: left;
   justify-content: top;
-  padding-left: 8%;
+  margin-left: 10%;
   font-size: calc(8px + 1vmin);
   color: #69635E;
   font-family: 'Bricolage Grotesque', sans-serif;
@@ -136,7 +137,7 @@ ul.custom-list li {
 }
 
 .About-paragraph{
-  padding-left: 8%;
+  margin-left: 10%;
   padding-bottom: 2%;
   width: 40%;
   color: #69635E;
@@ -151,7 +152,7 @@ ul.custom-list li {
 }
 
 .social-link-container{
-  padding-left: 8%;
+  margin-left: 10%;
   padding-bottom: 8%;
 }
 
