@@ -61,7 +61,7 @@ ul.custom-list {
 ul.custom-list li {
   margin-bottom: 5%; /* Add spacing between list items */
   font-size: 16px; /* Change the font size */
-  color: #69635E; /* Change the text color */
+  color: #DCD7D9; /* Change the text color */
 }
 
 /*for list hover effect */
@@ -97,6 +97,7 @@ ul.custom-list li {
   padding-left: 1em; /* Adjust this value to move the name to the right */
   font-weight: bold;
   cursor: pointer;
+  color: #69635E;
 }
 
 /* Define styles for the container */
@@ -164,6 +165,54 @@ ul.custom-list li {
   margin-right: 2%;
 }
 
+.weather-container {
+  position: absolute;
+  top: 3em;
+  right: 2em;
+  display: flex;
+}
+
+.city-weather {
+  margin-right: 20px;
+}
+
+.city-name{
+  font-size: calc(3px + 1vmin);
+  display: inline-block;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight:normal;
+  color: #69635E;
+  padding-right: 0.2em;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.temperature {
+  font-size: calc(3px + 1vmin);
+  display: inline-block;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight:normal;
+  color: #69635E;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.local-time span {
+  font-size: calc(13px + 1vmin);
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: bold;
+  color: #69635E;
+}
+
+.local-time span.blink {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
 /* Define the Bricolage Grotesque font */
 @font-face {
   font-family: 'Bricolage Grotesque';
@@ -171,21 +220,3 @@ ul.custom-list li {
   font-weight: normal;
   font-style: normal;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-/* .App-link {
-  color: #61dafb;
-} */

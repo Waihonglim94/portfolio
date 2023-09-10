@@ -2,6 +2,7 @@
 import './App.css';
 import WorkList from './WorkList'; // Import your component
 import React, { useState } from 'react';
+import WeatherWidget from './Weather';
 
 const works= [
   {
@@ -93,7 +94,7 @@ function App() {
         <a href="https://www.linkedin.com/in/waihonglim/" className='Social-link'>Resume</a>
         <p> resume link not ready & need to write email popup</p>
       </div>
-      
+      <WeatherWidget />
     </div>
   );
 }
