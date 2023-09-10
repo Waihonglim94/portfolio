@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/static/css/main.8aeae11d.css",
-    "main.js": "/static/js/main.00670f14.js",
+    "main.js": "/static/js/main.7adecbc2.js",
     "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
     "static/media/BricolageGrotesque-VariableFont_opsz,wdth,wght.ttf": "/static/media/BricolageGrotesque-VariableFont_opsz,wdth,wght.a9842791f821464a2354.ttf",
     "index.html": "/index.html",
     "main.8aeae11d.css.map": "/static/css/main.8aeae11d.css.map",
-    "main.00670f14.js.map": "/static/js/main.00670f14.js.map",
+    "main.7adecbc2.js.map": "/static/js/main.7adecbc2.js.map",
     "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.8aeae11d.css",
-    "static/js/main.00670f14.js"
+    "static/js/main.7adecbc2.js"
   ]
 }
