@@ -94,7 +94,7 @@ function WeatherWidget() {
         <div key={cityWeather.id} className="city-weather">
           {/* Location */}
           <p className="city-name">{cityWeather.name}</p>
-          <p className="temperature">{cityWeather.main.temp}°C</p>
+          <p className="temperature">{Math.floor(cityWeather.main.temp)}°C</p>
           {/* Local Time */}
           <div className="local-time">
             <BlinkingClock index={index}/>
@@ -106,33 +106,37 @@ function WeatherWidget() {
 }
 
 function BlinkingClock(props) {
-    // {console.log(index.index)}
-    let Zone = 'America/New_York'
-    if(props.index===0){
-        Zone='America/New_York'
-    } else if (props.index ===1){
-        Zone='Asia/Shanghai'
-    } else if (props.index ===2){
-        Zone='Asia/Kuala_Lumpur'
-    }
-    const [time, setTime] = useState(new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
+    let Zone = 'America/New_York';
   
-    useEffect(() => {
-        
-      const interval = setInterval(() => {
+    if (props.index === 0) {
+      Zone = 'America/New_York';
+    } else if (props.index === 1) {
+      Zone = 'Asia/Shanghai';
+    } else if (props.index === 2) {
+      Zone = 'Asia/Kuala_Lumpur';
+    }
+  
+    const [time, setTime] = useState(getFormattedTime(Zone));
+  
+    function getFormattedTime(zone) {
       const now = new Date();
-
+  
       const LocationTime = now.toLocaleTimeString('en-US', {
-        timeZone: Zone,
-        hour: '2-digit', 
+        timeZone: zone,
+        hour: '2-digit',
         minute: '2-digit'
       });
-      setTime(LocationTime);
-
-    }, 1000);
-
-    return () => clearInterval(interval);
-  });
+  
+      return LocationTime.replace(/(AM|PM)/, (match) => match.toLowerCase());
+    }
+  
+    useEffect(() => {
+      const interval = setInterval(() => {
+        setTime(getFormattedTime(Zone));
+      }, 1000);
+  
+      return () => clearInterval(interval);
+    }, [Zone]);
   
     return (
       <span>
@@ -141,6 +145,7 @@ function BlinkingClock(props) {
         {time.split(":")[1]}
       </span>
     );
-  }  
+  }
+  
 
 export default WeatherWidget;
