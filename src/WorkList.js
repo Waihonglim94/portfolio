@@ -4,7 +4,6 @@ import VideoJS from './Videojs'
 import videojs from 'video.js';
 import YouTube from 'react-youtube';
 
-
 const VideoPlayer = React.memo(({ video }) => {
   const videoJsOptions = {
     autoplay: true,

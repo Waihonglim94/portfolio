@@ -1,7 +1,11 @@
 .App {
   text-align: left;
+  min-height: 100vh;
+  min-width: 100%;
   background-color: #F7F6F4;
 }
+
+
 
 .App-logo {
   height: 40vmin;
@@ -9,22 +13,92 @@
 }
 
 .App-header {
-  min-height: 20%;
   display: flex;
-  flex-direction: column;
-  align-items: left;
-  margin-left: 10%;
-  justify-content: top;
-  padding-top: 4%;
-  font-size: calc(8px + 1vmin);
+  justify-content: space-between; /* Align children from left to right */
+  align-items: center;
+  margin-top: 1%;
+  font-size: calc(24px + 1vmin);
   color: #69635E;
   font-family: 'Bricolage Grotesque', sans-serif;
   font-weight: bolder;
 }
 
+.date-display{
+  color: #69635E;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: normal;
+  font-size: calc(4px + 1vmin);
+  margin-left: 6%;
+}
+
+.weather-container {
+  display: flex;
+  flex-direction: column;
+  margin-right: 6%;
+}
+
+.city-name{
+  font-size: calc(4px + 1vmin);
+  display: inline-block;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight:normal;
+  color: #69635E;
+}
+.temperature {
+  font-size: calc(4px + 1vmin);
+  display: inline-block;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight:normal;
+  color: #69635E;
+}
+
+.lines {
+  position: relative;
+  /* margin-left: 50%; */
+}
+
+.line1 {
+  height: 2px;
+  background-color: #69635E;
+  width: 100%;
+}
+
+.line2 {
+  height: 2px;
+  background-color: #69635E;
+  width: 100%;
+  margin-top: 5%;
+}
+
+.cover-Content{
+  font-size: calc(48px + 1vmin);
+  display: inline-block;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight:bolder;
+  color: #69635E;
+  margin-top: 20%;
+  margin-left: 4%;
+  align-items: center;
+}
+
+.newspaperCover{
+  background-color: #F7F6F4;
+  border-style:   solid;
+  border-width:   2px;
+  border-color: antiquewhite;
+  box-sizing: border-box;
+  border-radius: 0.5%;
+}
+
 .container {
   display: flex; 
   height: auto;
+}
+
+.p5 {
+  flex-direction: column; /* Display the list items below each other */
+  margin-right: 10%;
+  flex: 1;
 }
 
 .list-container {
@@ -165,36 +239,7 @@ ul.custom-list li {
   margin-right: 2%;
 }
 
-.weather-container {
-  position: absolute;
-  top: 3em;
-  right: 2em;
-  display: flex;
-}
 
-.city-weather {
-  margin-right: 20px;
-}
-
-.city-name{
-  font-size: calc(3px + 1vmin);
-  display: inline-block;
-  font-family: 'Bricolage Grotesque', sans-serif;
-  font-weight:normal;
-  color: #69635E;
-  padding-right: 0.2em;
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
-.temperature {
-  font-size: calc(3px + 1vmin);
-  display: inline-block;
-  font-family: 'Bricolage Grotesque', sans-serif;
-  font-weight:normal;
-  color: #69635E;
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
 
 .local-time span {
   font-size: calc(13px + 1vmin);
@@ -220,3 +265,19 @@ ul.custom-list li {
   font-weight: normal;
   font-style: normal;
 }
+
+.placeholder-rectangle {
+  display: none; /* Hide the element by default */
+}
+
+ @media (min-width: 769px) {
+  .placeholder-rectangle {
+    background-color: #69635E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    width: 50%;
+  }
+} 
+
