@@ -7,8 +7,8 @@ import WeatherWidget from './Weather';
 import HTMLFlipBook from "react-pageflip";
 import FlipPage from 'react-pageflip';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import {Row, Col} from 'reactstrap';
-import Newspaper from './Newspaper';
+import {Row, Col} from 'reactstrap';
+
 const works= [
   {
     "name":"Zenmode app",
@@ -75,14 +75,16 @@ const works= [
     "company":"Nothing"
   }
 ]
-
+let landscape;
 function getWindowDimensions() {
   let { innerWidth: width, innerHeight: height } = window;
-
-  if (width > 768) {
-    width /= 2;
-  }
   console.log(width);
+  if (width>768){
+    width=width/2;
+    landscape = true;
+  }else{
+    landscape = false;
+  }
   return {
     width,
     height
@@ -111,72 +113,84 @@ function App() {
   const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
   const formattedDate = today.toLocaleDateString(undefined, options);
   const { height, width } = useWindowDimensions();
-
+  // const elewidth = (width>768) ? width:width/2;
   const [updateKey, setUpdateKey] = useState(0);
   useEffect(() => {
     // Call setUpdateKey whenever you want to trigger an update
     setUpdateKey(prevKey => prevKey + 1);
   }, [height, width]);
 
+  let placeholder = "";
+  if (landscape == true) {
+    placeholder = "Intentionally left blank"
+  } else{
+    placeholder = "Grab the conrner and Start Flipping"
+  }
+  
 
   return (
-    <div>
-      {/* <Newspaper /> */}
+    <div className='App'>
 
-      {width > 400 && (
-        <div className='placeholder-rectangle'>intentionally left blank</div>)}
-        
-      <FlipPage
-        width={width} 
-        height={height} 
-        key={updateKey}
-        maxShadowOpacity={0.1}   
-        mobileScrollSupport={true}
-        //size={"stretch"}
-        //key = {width + height}
-        //usePortrait={true}
-        //onFlip={onPage}
-        //onChangeOrientation={this.onChangeOrientation}
-        //onChangeOrientation={onChangeOrientation}
-        //onChangeState={this.onChangeState}
-        showCover={false}
-      > 
+    {/* <div class="placeholder-rectangle">{placeholder}</div> */}
+    <HTMLFlipBook
+    width={width} 
+    height={height} 
+    key={updateKey}
+    maxShadowOpacity={0.1}   
+    mobileScrollSupport={true}
+    //size={"stretch"}
+   //autoSize={true}
+    //key = {width + height}
+    //usePortrait={true}
+    //onFlip={onPage}
+    //onChangeOrientation={this.onChangeOrientation}
+    //onChangeOrientation={onChangeOrientation}
+    //onChangeState={this.onChangeState}
+    showCover={false}
+  > 
+  <div className='placeholder-container'>
+    <div className='placeholder-box'></div>
+    <div className="placeholder-text">{placeholder}</div>
+   </div>
 
-     <div className="newspaperCover">
-      <header className="App-header">
-       <div className="date-display">
-         1st edition<br></br>
-         {formattedDate}
-       </div>
-        <h1 className='App-header'>Wai York Times</h1> 
-        <WeatherWidget />
-      </header>
-      <div className="lines">
-        <div className="line1"></div>
-        <div className="line2"></div>
-      </div>
-      <div className='cover-Content'>Malaysian Soul: Snapping Shots Globally While Dodging Pixels.</div>
+  <div className="newspaperCover">
+    <header className="App-header">
+    <div className="date-display">
+      1st edition<br></br>
+      {/* {formattedDate} */}
     </div>
-      <div className="newspaperCover">
-        page2 <WorkList works={works} selectedVideo={selectedVideo} onSelectVideo={setSelectedVideo}/>
-        page 22222222
-      </div>
+      <h1 className='App-header'>Wai York Times</h1> 
+      {/* <WeatherWidget /> */}
+    </header>
+    <div className="lines">
+      <div className="line1"></div>
+      <div className="line2"></div>
+    </div>
+    <div className='cover-Content'>Malaysian Soul: Snapping Shots Globally While Dodging Pixels.</div>
+  </div>
 
-      <div className="newspaperCover">
-        page3 <WorkList works={works} selectedVideo={selectedVideo} onSelectVideo={setSelectedVideo}/>
-        page 3333
-      </div>
-      <div className="newspaperCover">
-        page3 <WorkList works={works} selectedVideo={selectedVideo} onSelectVideo={setSelectedVideo}/>
-        page 3333
-      </div>
-      <div className="newspaperCover">
-        page3 <WorkList works={works} selectedVideo={selectedVideo} onSelectVideo={setSelectedVideo}/>
-        page 3333
-      </div> 
-      </FlipPage>
 
-      </div>
+
+  <div className="newspaperCover" >
+    page2 
+    page 22222222
+  </div>
+
+
+  <div className="newspaperCover"data-density="soft">
+    page3 
+    page 3333
+  </div>
+  <div className="newspaperCover">
+    page4 
+    page 444
+  </div>
+  <div className="newspaperCover">
+    page5 
+    page 555
+  </div> 
+  </HTMLFlipBook>
+  </div>
   );
 }
 
