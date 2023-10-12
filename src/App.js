@@ -9,6 +9,8 @@ import FlipPage from 'react-pageflip';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Row, Col} from 'reactstrap';
 
+
+
 const works= [
   {
     "name":"Zenmode app",
@@ -79,12 +81,17 @@ let landscape;
 function getWindowDimensions() {
   let { innerWidth: width, innerHeight: height } = window;
   console.log(width);
-  if (width>768){
-    width=width/2;
-    landscape = true;
-  }else{
-    landscape = false;
-  }
+    // width=width/2;
+
+    if (width<768){
+      width = height/2
+    } else{
+      width = width/2;
+    }
+  //   landscape = true;
+  // }else{
+  //   landscape = false;
+  // }
   return {
     width,
     height
@@ -113,7 +120,6 @@ function App() {
   const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
   const formattedDate = today.toLocaleDateString(undefined, options);
   const { height, width } = useWindowDimensions();
-  // const elewidth = (width>768) ? width:width/2;
   const [updateKey, setUpdateKey] = useState(0);
   useEffect(() => {
     // Call setUpdateKey whenever you want to trigger an update
@@ -125,14 +131,15 @@ function App() {
     placeholder = "Intentionally left blank"
   } else{
     placeholder = "Grab the conrner and Start Flipping"
-  }
-  
+  }  
 
   return (
     <div className='App'>
-
-    {/* <div class="placeholder-rectangle">{placeholder}</div> */}
-    <HTMLFlipBook
+    
+    {width < 786/2 ? (
+      <div>
+      <div className='small-screen'>Please use larger screen</div>
+      <HTMLFlipBook className='small-book'
     width={width} 
     height={height} 
     key={updateKey}
@@ -141,7 +148,7 @@ function App() {
     //size={"stretch"}
    //autoSize={true}
     //key = {width + height}
-    //usePortrait={true}
+    usePortrait={false}
     //onFlip={onPage}
     //onChangeOrientation={this.onChangeOrientation}
     //onChangeOrientation={onChangeOrientation}
@@ -191,7 +198,69 @@ function App() {
   </div> 
   </HTMLFlipBook>
   </div>
+    ):(
+    <HTMLFlipBook
+    width={width} 
+    height={height} 
+    key={updateKey}
+    maxShadowOpacity={0.1}   
+    mobileScrollSupport={true}
+    //size={"stretch"}
+   //autoSize={true}
+    //key = {width + height}
+    usePortrait={false}
+    //onFlip={onPage}
+    //onChangeOrientation={this.onChangeOrientation}
+    //onChangeOrientation={onChangeOrientation}
+    //onChangeState={this.onChangeState}
+    showCover={false}
+  > 
+  <div className='placeholder-container'>
+    <div className='placeholder-box'></div>
+    <div className="placeholder-text">{placeholder}</div>
+   </div>
+
+  <div className="newspaperCover">
+    <header className="App-header">
+    <div className="date-display">
+      1st edition<br></br>
+      {/* {formattedDate} */}
+    </div>
+      <h1 className='App-header'>Wai York Times</h1> 
+      {/* <WeatherWidget /> */}
+    </header>
+    <div className="lines">
+      <div className="line1"></div>
+      <div className="line2"></div>
+    </div>
+    <div className='cover-Content'>Malaysian Soul: Snapping Shots Globally While Dodging Pixels.</div>
+  </div>
+
+
+
+  <div className="newspaperCover" >
+    page2 
+    page 22222222
+  </div>
+
+
+  <div className="newspaperCover"data-density="soft">
+    page3 
+    page 3333
+  </div>
+  <div className="newspaperCover">
+    page4 
+    page 444
+  </div>
+  <div className="newspaperCover">
+    page5 
+    page 555
+  </div> 
+  </HTMLFlipBook>
+      )}
+  </div>
   );
+
 }
 
 export default App;
