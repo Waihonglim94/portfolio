@@ -1,37 +1,23 @@
 .App {
+  padding: 10px;
   height: 100vh;
   width: 100%;
   background-color: #F7F6F4;
 }
-.small-screen{
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  text-align: center;
-  padding-top: 35%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  color: #ffffff;
-  font-size: large;
+.outer-frame1 {
+  border: 2px solid #D9D9D9; /* Adjust the color as needed */
+  padding: 10px; /* This adds space inside the frame */
+  width: 100%; /* Adjust as per your design */
 }
-.small-book{
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
+
+.outer-frame2 {
+  border: 2px solid #D9D9D9; /* Adjust the color as needed */
+  padding: 14px; /* This adds space inside the frame */
+  width: 100%; /* Adjust as per your design */
 }
-@media (max-width: 767px) {
-  .App {
-    transform: rotate(90deg);
-    transform-origin:bottom left;
-    
-    position:absolute;
-    top:-100vw;
-    
-    height:100vw;
-    width:100vh;
-  }
+
+.custom-cursor {
+  cursor: url('/Users/jiyunyao/Desktop/portfolio/src/cursor.png') 0 0, auto;
 }
 
 .App-logo {
@@ -41,21 +27,13 @@
 
 .App-header {
   display: flex;
-  justify-content: space-between; /* Align children from left to right */
+  justify-content: space-between;
   align-items: center;
   margin-top: 1%;
-  font-size: calc(24px + 1vmin);
+  font-size: 4vw;
   color: #69635E;
-  font-family: 'Bricolage Grotesque', sans-serif;
-  font-weight: bolder;
-}
-
-.date-display{
-  color: #69635E;
-  font-family: 'Bricolage Grotesque', sans-serif;
-  font-weight: normal;
-  font-size: calc(4px + 1vmin);
-  margin-left: 6%;
+  font-family: 'Source Serif Pro', sans-serif;
+  font-weight:bolder;
 }
 
 .weather-container {
@@ -64,19 +42,18 @@
   margin-right: 6%;
 }
 
-.city-name{
-  font-size: calc(4px + 1vmin);
-  display: inline-block;
-  font-family: 'Bricolage Grotesque', sans-serif;
-  font-weight:normal;
+.banner{
   color: #69635E;
-}
-.temperature {
-  font-size: calc(4px + 1vmin);
-  display: inline-block;
-  font-family: 'Bricolage Grotesque', sans-serif;
-  font-weight:normal;
-  color: #69635E;
+  font-family: 'Source Serif Pro', sans-serif;
+  font-weight: normal;
+  font-size: 1vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 10%;
+  margin-right: 10%;
+  padding-top: 1%;
+  padding-bottom: 1%;
 }
 
 .lines {
@@ -94,28 +71,26 @@
   height: 2px;
   background-color: #69635E;
   width: 100%;
-  margin-top: 5%;
+}
+
+
+.cover-Title{
+  font-size: 3vw;
+  display: inline-block;
+  font-family: 'Source Serif Pro', sans-serif;
+  font-weight:bolder;
+  color: #69635E;
+  padding-top: 4%;
+  text-align: center;
 }
 
 .cover-Content{
-  font-size: calc(12px + 1vmin);
+  font-size: 1.1vw;
   display: inline-block;
-  font-family: 'Bricolage Grotesque', sans-serif;
+  font-family: 'Source Serif Pro', sans-serif;
   font-weight:bolder;
   color: #69635E;
-  margin-top: 20%;
-  margin-left: 4%;
-  margin-bottom: 20%;
-  align-items: center;
-}
-
-.newspaperCover{
-  background-color: #F7F6F4;
-  border-style:   solid;
-  border-width:   2px;
-  border-color: antiquewhite;
-  box-sizing: border-box;
-  border-radius: 0.5%;
+  padding-top: 4%;
 }
 
 .container {
@@ -325,3 +300,31 @@ ul.custom-list li {
   }
 }  */
 
+
+/* @media (max-width: 767px) {
+  .App {
+    transform: rotate(90deg);
+    transform-origin:bottom left;
+    
+    position:absolute;
+    top:-100vw;
+    
+    height:100vw;
+    width:100vh;
+  }
+} */
+
+.city-name{
+  font-size: calc(4px + 1vmin);
+  display: inline-block;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight:normal;
+  color: #69635E;
+}
+.temperature {
+  font-size: calc(4px + 1vmin);
+  display: inline-block;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight:normal;
+  color: #69635E;
+}
